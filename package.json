@@ -5,19 +5,52 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "postinstall": "npx rn-nodeify --install \"fs,util,path,tls,stream,buffer,global,process\" --hack"
   },
   "dependencies": {
+    "asyncstorage-down": "^4.2.0",
+    "aws-iot-device-sdk": "^2.2.6",
+    "aws-sdk": "^2.712.0",
     "expo": "~38.0.8",
     "expo-status-bar": "^1.0.2",
+    "path-browserify": "0.0.0",
+    "process": "^0.11.0",
     "react": "~16.11.0",
     "react-dom": "~16.11.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-38.0.2.tar.gz",
-    "react-native-web": "~0.11.7"
+    "react-native-level-fs": "^3.0.0",
+    "react-native-web": "~0.11.7",
+    "readable-stream": "^1.0.33",
+    "stream-browserify": "^1.0.0",
+    "util": "^0.10.4"
   },
   "devDependencies": {
     "@babel/core": "^7.8.6",
-    "babel-preset-expo": "~8.1.0"
+    "babel-preset-expo": "~8.1.0",
+    "rn-nodeify": "^10.2.0"
   },
-  "private": true
+  "private": true,
+  "react-native": {
+    "path": "path-browserify",
+    "fs": "react-native-level-fs",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "stream": "stream-browserify",
+    "tls": false
+  },
+  "browser": {
+    "path": "path-browserify",
+    "fs": "react-native-level-fs",
+    "_stream_transform": "readable-stream/transform",
+    "_stream_readable": "readable-stream/readable",
+    "_stream_writable": "readable-stream/writable",
+    "_stream_duplex": "readable-stream/duplex",
+    "_stream_passthrough": "readable-stream/passthrough",
+    "stream": "stream-browserify",
+    "tls": false
+  }
 }
